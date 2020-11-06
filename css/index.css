@@ -7,6 +7,10 @@
     font-family: 'Nunito', sans-serif;
 }
 
+:root {
+    overflow-y: auto;
+}
+
 body{
 
     background-color:#ffffff;
@@ -24,6 +28,12 @@ header{
     align-items: center;
 
 }
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+
 
 header .logo{
 
@@ -156,13 +166,35 @@ header .icones .borda-icone i{
 
 }
 
-@media only screen and (max-width: 800px) { header .barra-pesquisa input{ width: 90%; }header .barra-pesquisa button{ width: 10%; }}
+@media only screen and (max-width: 800px) {
+    header .barra-pesquisa input{
+        width: 90%; 
+    }
+    header .barra-pesquisa button{
+            width: 10%; 
+    }
+}
 
+/* O BOTAO ROSA PARA TODOS DOMINAR*/
+
+.botao-rosa{
+    
+    margin-top: 40px;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    background-color: #f24783;
+    color: white;
+    outline: none;
+
+}
+.botao-rosa:hover{
+    background-color: #ee6b99;
+}
 
 /* MENSAGEM INSPIRACIOS PARA INSPIRAR TODOS A COMPRAR*/
 
 .mensagem{
-
     margin: 0px auto;
     width: 90%;
     height: 750px;
@@ -186,23 +218,6 @@ header .icones .borda-icone i{
     max-width: 700px;
 }
 
-.mensagem-content button{
-
-    margin-top: 40px;
-    border: none;
-    width: 200px;
-    padding: 10px;
-    background-color: #f24783;
-    color: white;
-    outline: none;
-
-}
-
-.mensagem-content button:hover{
-
-    background-color: #ee6b99;
-
-}
 
 /* PARTE DO CODIGO AQUAL SE REFERE AOS PRODUTOS */
 
@@ -212,20 +227,6 @@ header .icones .borda-icone i{
     height: 900px;
     margin: 0px auto;
     border-bottom: 1px solid rgb(218, 218, 218);
-}
-
-.produtos button{
-    margin-top: 80px;
-    border: none;
-    width: 200px;
-    padding: 10px;
-    background-color: #f24783;
-    color: white;
-    outline: none;
-}
-
-.produtos button:hover{
-    background-color: #ee6b99;
 }
 
 .produtos-content {
@@ -352,20 +353,6 @@ header .icones .borda-icone i{
     width: 300px;
 }
 
-.depoimento button{
-    margin-top: 80px;
-    border: none;
-    width: 200px;
-    padding: 10px;
-    background-color: #f24783;
-    color: white;
-    outline: none;
-}
-
-.depoimento button:hover{
-    background-color: #ee6b99;
-}
-
 .depoimento-botao {
     text-align: center;
     width: 100%;
@@ -374,15 +361,15 @@ header .icones .borda-icone i{
 
 /* CONTATOS DA EMPRESA */
 
-.contato-div{
+.mapa-div{
     width: 90%;
-    height: 600px;
+    height: 700px;
     border-bottom: 1px solid rgb(218, 218, 218);
     margin: 0px auto;
     position: relative;
 }
 
-.contato-content{
+.mapa-content{
 
     position: absolute;
     top: 50%;
@@ -391,54 +378,53 @@ header .icones .borda-icone i{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    display: flex;
-    
 
 }
 
-.contato-content .mapa, .contato-content .contato{
+.mapa-content .mapa{
 
-    width: 45%;
-    height: 80%;
+    width: 90%;
+    height: 600px;
     margin: 0px auto;
 
 }
 
-.contato-content .contato {
-    display: flex;
-    flex-direction: column;
+footer {
+    width: 100%;
+    height: 400px;
     position: relative;
-}
-
-.contato-content .contato .contato-centralizador{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: cadetblue;
     display: flex;
     flex-direction: column;
-
-
+    padding: 100px 100px 0px 100px;
 }
 
-
-.contato-content .contato .contato-centralizador > div{
+.footer-content{
+    width: 100%;
+    height: 75%;
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
-.contato-content .contato > div i{
+.footer-content img{
+    width: 100px;
+    height: 40px;
+}
 
-    margin: 0px 20px 0px 20px;
+.footer-content * {
+    background-color: black;
+    width: 25%;
+    height: 300px;
+}
+
+.footer-footer-content {
+    background-color: tomato;
+    width: 100%;
+    height: 25%;
+    padding: 0px 50px 0px 50px;
+}
+
+.footer-footer {
     font-size: 40px;
-
+    text-align: center;
+    padding-top: 25px;
 }
-.contato-content .contato > div p{
-
-    font-size: 20px;
-
-}
-
-
-
