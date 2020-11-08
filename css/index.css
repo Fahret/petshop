@@ -128,7 +128,6 @@ header .icones .borda-icone:hover{
 
     border: 2px solid #f24783;
 
-
 }
 
 
@@ -178,7 +177,7 @@ header .icones .borda-icone i{
 /* O BOTAO ROSA PARA TODOS DOMINAR*/
 
 .botao-rosa{
-    
+
     margin-top: 40px;
     border: none;
     width: 200px;
@@ -243,7 +242,7 @@ header .icones .borda-icone i{
     overflow: hidden;
 }
 
-.produtos-imagens * {
+.produtos-imagens *{
     display: inline-block;
     padding: 10px;
     margin: 10px;
