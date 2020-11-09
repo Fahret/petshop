@@ -1,14 +1,18 @@
 var arrayProdutos = []
 
 $(document).ready(function(){
-    
+
     puxaProdutos()
     montarCard()
+
+    $(".card-produto").click(function(){
+        window.location.href="produto.html"
+    })
 
 });
 
 function puxaProdutos() {
-    for(var key in localStorage) {montarCard
+    for(var key in localStorage) {
         if(localStorage.hasOwnProperty(key)) {
             arrayProdutos.push(key)
         }

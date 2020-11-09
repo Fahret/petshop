@@ -242,7 +242,7 @@ header .icones .borda-icone i{
     overflow: hidden;
 }
 
-.produtos-imagens *{
+.produto-botao img{
     display: inline-block;
     padding: 10px;
     margin: 10px;
@@ -250,8 +250,8 @@ header .icones .borda-icone i{
     width: 250px;
 }
 
-.produtos-imagens *:hover {
-    border: 1px solid white;
+.produto-botao img:hover {
+    width: 225px;
 }
 
 /* VIDEO DE ANIAMIS FOFINHOS E RACAO PAR AFAZER DINERO*/
@@ -284,7 +284,7 @@ header .icones .borda-icone i{
 
 .depoimento{
     width: 90%;
-    height: 1150px;
+    height: 900px;
     border-bottom: 1px solid rgb(218, 218, 218);
     margin: 80px auto 80px auto;
 }
@@ -300,11 +300,12 @@ header .icones .borda-icone i{
 }
 
 .card-review{
+    font-size: 16px;
     position: relative;
     margin-left: 50px;
     background-color: white;
-    width: 400px;
-    height: 700px;
+    width: 300px;
+    height: 575px;
     box-shadow: 0px 5px  5px rgb(173, 173, 173);
 }
 
@@ -320,23 +321,24 @@ header .icones .borda-icone i{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 150px;
     border-radius: 50%;
     margin-top: 30px;
 }
 
 .card-nome{
-    margin-top: 245px;
+    margin-top: 190px;
     text-align: center;
     color: white;
 }
 
 .card-nome h1{
     overflow: hidden;
+    font-size: 30px;
 }
 
 .card-txt{
-    width: 325px;
+    width: 250px;
     margin: 50px auto;
 }
 
@@ -349,7 +351,7 @@ header .icones .borda-icone i{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 300px;
+    width: 200px;
 }
 
 .depoimento-botao {
@@ -358,12 +360,11 @@ header .icones .borda-icone i{
     height: 300px
 }
 
-/* CONTATOS DA EMPRESA */
+/* NOSSA SEDE NO MAPA GOOGLE API*/
 
 .mapa-div{
     width: 90%;
-    height: 700px;
-    border-bottom: 1px solid rgb(218, 218, 218);
+    height: 800px;
     margin: 0px auto;
     position: relative;
 }
@@ -388,18 +389,35 @@ header .icones .borda-icone i{
 
 }
 
+/* CONTATOS DA EMPRESA */
+
 footer {
     width: 100%;
     height: 400px;
     position: relative;
-    background-color: cadetblue;
     display: flex;
     flex-direction: column;
-    padding: 100px 100px 0px 100px;
+    padding: 100px 200px 0px 150px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+footer p {
+    font-size: 16px;
+}
+
+footer h4{
+    font-size: 18px;
+    color: blueviolet;
 }
 
 .footer-content{
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
     height: 75%;
     display: flex;
 }
@@ -407,16 +425,55 @@ footer {
 .footer-content img{
     width: 100px;
     height: 40px;
+    margin-bottom: 10px;
 }
 
-.footer-content * {
-    background-color: black;
+.footer-content div {
     width: 25%;
     height: 300px;
 }
 
+.footer-logo div{
+    width: 100%;
+    height: 25%;
+}
+
+.footer-contato div{
+    margin-top: 5px;
+}
+
+.footer-contato div *{
+    display: inline-block;
+}
+
+.footer-contato div i {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.footer-inscrever input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.bSinscreve{
+
+    margin-top: 10px;
+    border: none;
+    width: 100px;
+    padding: 4px;
+    background-color: #f24783;
+    color: white;
+    outline: none;
+
+}
+.bSinscreve:hover{
+    background-color: #ee6b99;
+}
+
 .footer-footer-content {
-    background-color: tomato;
     width: 100%;
     height: 25%;
     padding: 0px 50px 0px 50px;
@@ -426,4 +483,8 @@ footer {
     font-size: 40px;
     text-align: center;
     padding-top: 25px;
+}
+
+.footer-footer i{
+    color: blueviolet;
 }
