@@ -180,9 +180,9 @@ $(document).ready(function (){
             if (localStorage.hasOwnProperty(key)){
 
                 var usuario = JSON.parse(key)
-                if($(".usuario-login").val() == usuario["email"] && $(".enha-login").val() == usuario["senha"]){
+                if($(".usuario-login").val() == usuario["email"] && $(".senha-login").val() == usuario["senha"]){
 
-                    sessionStorage.setItem(key)
+                    sessionStorage.setItem(key, "usuario")
                     return
 
                 }
