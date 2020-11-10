@@ -179,12 +179,14 @@ header .icones .borda-icone i{
 .botao-rosa{
 
     margin-top: 40px;
+    margin-bottom: 40px;
     border: none;
     width: 200px;
     padding: 10px;
     background-color: #f24783;
     color: white;
     outline: none;
+    cursor: pointer;
 
 }
 .botao-rosa:hover{
@@ -196,7 +198,7 @@ header .icones .borda-icone i{
 .mensagem{
     margin: 0px auto;
     width: 90%;
-    height: 750px;
+    height: 400px;
     position: relative;
     border-bottom: 1px solid rgb(218, 218, 218);
 
@@ -223,60 +225,70 @@ header .icones .borda-icone i{
 .produtos {
     position: relative;
     width: 90%;
-    height: 900px;
     margin: 0px auto;
     border-bottom: 1px solid rgb(218, 218, 218);
 }
 
 .produtos-content {
-    position: absolute;
     text-align: center;
-    width: 80%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    margin-top: 40px;
+    
 }
 
-.produtos-titulo h1{
-    text-align: center;
-    overflow: hidden;
+.produtos-imagens{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
 }
 
-.produto-botao img{
-    display: inline-block;
-    padding: 10px;
-    margin: 10px;
-    border: 10px solid white;
-    width: 250px;
+.produto-botao{
+
+    border: 1px solid rgb(206, 206, 206);
+    width: 243px;
+    cursor: pointer;
+    flex-basis: 243px;
+    margin-bottom: 20px;
+
 }
 
-.produto-botao img:hover {
-    width: 225px;
+
+.produto-botao div p{
+
+    font-size: 20px;
+    padding: 20px;
+
 }
+
+
+.produto-botao-img{
+
+    background-size: cover;
+    height: 240px;
+    margin: 20px auto 20px;
+
+}
+
 
 /* VIDEO DE ANIAMIS FOFINHOS E RACAO PAR AFAZER DINERO*/
 
 .video{
     width: 90%;
-    height: 1000px;
+    height: 700px;
     border-bottom: 1px dotted rgb(218, 218, 218);
     margin: 0px auto;
-}
-
-.video-content{
-    width: 70%;
     text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
-.video-content h1{
-    margin: 80px 0px 80px 0px;
+.video h1{
+    margin: 40px 0px 80px 0px;
     overflow: hidden;
 }
 
-.video-content iframe{
+.video iframe{
+    width: 90%;
+    height: 70%;
     margin-bottom: 80px;
 }
 
@@ -284,9 +296,9 @@ header .icones .borda-icone i{
 
 .depoimento{
     width: 90%;
-    height: 900px;
     border-bottom: 1px solid rgb(218, 218, 218);
-    margin: 80px auto 80px auto;
+    margin: 40px auto 80px auto;
+    text-align: center;
 }
 
 .depoimento-titulo {
@@ -295,18 +307,24 @@ header .icones .borda-icone i{
     margin: 0px 0px 40px 0px;
 }
 
-.depoimento .card-review {
-    display: inline-block;
+.cards-review-div{
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .card-review{
     font-size: 16px;
     position: relative;
-    margin-left: 50px;
     background-color: white;
     width: 300px;
+    flex-basis: 300px;
     height: 575px;
     box-shadow: 0px 5px  5px rgb(173, 173, 173);
+    margin-bottom: 20px;
+
 }
 
 .card-img{
@@ -322,6 +340,7 @@ header .icones .borda-icone i{
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
+    height: 150px;
     border-radius: 50%;
     margin-top: 30px;
 }
@@ -354,11 +373,7 @@ header .icones .borda-icone i{
     width: 200px;
 }
 
-.depoimento-botao {
-    text-align: center;
-    width: 100%;
-    height: 300px
-}
+
 
 /* NOSSA SEDE NO MAPA GOOGLE API*/
 
