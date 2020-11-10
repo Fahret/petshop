@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 function puxaProdutos() {
     for(var key in localStorage) {
-        if(localStorage.hasOwnProperty(key)) {
+        if(localStorage.hasOwnProperty(key) && localStorage[key] == "produto") {
             arrayProdutos.push(key)
         }
     }
