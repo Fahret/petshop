@@ -4,18 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Ubuntu:ital,wght@1,300&display=swap">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Ubuntu:ital,wght@1,300&display=swap">
+    <link rel="stylesheet" href="css/padroes.css">
     <link rel="stylesheet" href="css/produto.css">
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/produto.js"></script>
+
     <title>produto</title>
 </head>
 
 <body>
     <header>
-        <a href="index.html"><img src="img/petticologo.png" class="logo"></a>
+
+        <a class="logo" href="index.html"><img src="img/petticologo.png"></a>
 
         <div class="barra-pesquisa">
             <input type="text" placeholder="Ex: Ração">
@@ -23,18 +27,22 @@
         </div>
 
         <div class="icones">
-            <div class="borda-icone">
+
+            <a class="borda-icone" href="carrinho.html">
                 <i class="fas fa-shopping-cart"></i>
-            </div>
-            <div class="borda-icone">
+            </a>
+
+            <a class="borda-icone">
                 <i class="fas fa-comment-alt" style="padding-right: 0px;"></i>
-            </div>
-            <div class="borda-icone">
+            </a>
+            
+            <a class="borda-icone" href="logincadastro.html">
                 <i class="fas fa-sign-in-alt"></i>
-            </div>
+            </a>
         </div>
 
     </header>
+
     <div class="produto-content">
 
         <div class="conteudo-esquerdo">
@@ -44,16 +52,10 @@
                     <img src="img/racao-gato.jpg" alt="racao-gato">
                 </div>
                 <div class="div-info">
-                    <h2>Nome do Produto / peso</h2>
+                    <h2 class="produto-nome">Nome do Produto / peso</h2>
                     <img src="img/five-stars.png" alt="five-stars">
-                    <ul>
-                        <li>Atributo numero 1</li>
-                        <li>Atributo numero 2</li>
-                        <li>Atributo numero 3</li>
-                        <li>Atributo numero 4</li>
-                        <li>Atributo numero 5</li>
-                    </ul>
-                    <p>Cod: 1</p>
+                    <p class="descricao-produto"></p>
+                    <p class="codigo-produto"></p>
                 </div>
             </div>
 

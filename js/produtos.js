@@ -6,7 +6,12 @@ $(document).ready(function(){
     montarCard()
 
     $(".card-produto").click(function(){
-        window.location.href="produto.html"
+
+        var id = $(this).index()
+        var produto = JSON.stringify(arrayProdutos[id])
+        sessionStorage.setItem("visualizarproduto", produto)
+        window.location.href = "produto.html"
+
     })
 
 });
@@ -14,7 +19,8 @@ $(document).ready(function(){
 function puxaProdutos() {
     for(var key in localStorage) {
         if(localStorage.hasOwnProperty(key) && localStorage[key] == "produto") {
-            arrayProdutos.push(key)
+            var produto = JSON.parse(key)
+            arrayProdutos.push(produto)
         }
     }
 }
@@ -22,7 +28,7 @@ function puxaProdutos() {
 function montarCard() {
     for(i = 0; i < arrayProdutos.length; i++) {
 
-        var produto = JSON.parse(arrayProdutos[i])
+        var produto = arrayProdutos[i]
         var conteudo = ""
         
         conteudo += '<div class="card-produto">'
@@ -37,7 +43,7 @@ function montarCard() {
         conteudo +=         '<img src="img/five-stars.png" alt="stars">'
         conteudo +=     '</div>'
         conteudo +=     '<div class="card-produto-preco">'
-        conteudo +=         '<h3>' + produto["preco"] + '</h3>'
+        conteudo +=         '<h3>' + produto["precovenda"] + '</h3>'
         conteudo +=     '</div>'
         conteudo += '</div>'
 

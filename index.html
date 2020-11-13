@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Ubuntu:ital,wght@1,300&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Ubuntu:ital,wght@1,300&display=swap">
+    <link rel="stylesheet" href="css/padroes.css">
     <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN57mkO88IXlQikM9Gp6zA2txiHgxMtJY&callback=initMap" async defer ></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="js/index.js"></script>
 
@@ -18,7 +21,7 @@
 
     <header>
 
-        <img src="img/petticologo.png" class="logo">
+        <a class="logo" href="index.html"><img src="img/petticologo.png"></a>
 
         <div class="barra-pesquisa">
             <input type="text" placeholder="Ex: Ração">
@@ -26,18 +29,22 @@
         </div>
 
         <div class="icones">
-            <div class="borda-icone">
+
+            <a class="borda-icone" href="carrinho.html">
                 <i class="fas fa-shopping-cart"></i>
-            </div>
-            <div class="borda-icone">
+            </a>
+
+            <a class="borda-icone">
                 <i class="fas fa-comment-alt" style="padding-right: 0px;"></i>
-            </div>
-            <div class="borda-icone">
-                <a href="logincadastro.html"><i class="fas fa-sign-in-alt"></i></a>
-            </div>
+            </a>
+            
+            <a class="borda-icone" href="logincadastro.html">
+                <i class="fas fa-sign-in-alt"></i>
+            </a>
         </div>
 
     </header>
+
 
     <div class="mensagem">
         <div class="mensagem-content">
@@ -48,7 +55,6 @@
 
     <div class="produtos">
         <div class="produtos-content">
-
             <div class="produtos-imagens">
                 <div class="produto-botao">
                     <div>
@@ -157,7 +163,7 @@
                 <h1><i>Mapa</i></h1>
             </div>
 
-            <div class="mapa" style="border: 1px solid grey;"></div>
+            <div class="mapa" id="map" style="border: 1px solid grey;"></div>
         </div>
     </div>
 

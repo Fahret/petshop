@@ -1,0 +1,344 @@
+/* Reset css */
+*{
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Página listar produtos */
+
+#menuativo{
+
+    display: none;
+
+}
+
+
+#menuativo:checked ~ .filtros{
+
+    left: 0;
+    transition: all .2s linear;
+
+}
+
+#menuativo:not(:checked) ~ .filtros{
+
+    left: -300px;
+    transition: all .2s linear;
+
+}
+
+.checkmenu{
+
+    z-index: 9;
+    position: fixed;
+    top: 10;
+    left: 10;
+
+}
+
+.checkmenu i{
+
+    color: rgb(255, 115, 0);
+
+}
+
+.filtros{
+
+    width: 300px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    left: -300px;
+    top: 0;
+    z-index: 4;
+    box-shadow: 1px 1px 3px black;
+    padding-top: 30px;
+
+}
+
+.novo-filtro{
+
+    border-radius: 3px;
+    background-color: rgb(238, 237, 237);
+    border: 1px solid rgb(219, 216, 216);
+    width: 90%;
+    margin: 20px 0px 0px 15px;
+    position: relative;
+    display: none;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.novo-filtro select, .novo-filtro textarea, .textarea-descricao{
+
+    height: 30px;
+    min-height: 30px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 2px;
+    margin: 0 auto;
+    vertical-align: middle;
+    font-size: 15px;
+    padding: 3px;
+    padding-left: 10px;
+
+}
+
+.novo-filtro select{
+
+    padding-left: 3px;
+    margin-bottom: 10px;
+  
+}
+
+.botao-novo-filtro{
+
+    border-radius: 3px;
+    background-color: rgba(238, 237, 237, 0.473);
+    border: 1px dashed rgb(219, 216, 216);
+    width: 90%;
+    margin: 20px 0px 0px 15px;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.botao-novo-filtro:hover{
+
+    background-color: rgba(238, 237, 237, 0.733);
+
+}
+
+.botao-novo-filtro p{
+
+    margin-top: 15px;
+
+}
+
+
+.filtros-botoes{
+
+    display: none;
+    margin: 50px 0 0 15px;
+    width: 100%;
+
+}
+.filtros-botoes *{
+
+    padding: 5px;
+
+}
+
+.div-produtos{
+
+    width: 95%;
+    height: 800px;
+    margin: 50px auto 50px auto;
+
+}
+
+.operacoes{
+
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+
+}
+
+.div-nprodutos{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.div-nprodutos input{
+
+    width: 40px;
+    margin-right: 50px;
+    text-align: center;
+
+}
+
+.div-nprodutos p{
+
+    margin: 0px 10px .5rem 0px;
+
+}
+
+.operacoes #ordenacao{
+
+    margin-right: 5px;
+
+}
+.div-botoes{
+
+    margin-left: auto;
+
+}
+
+.addproduct{
+
+    font-size: 30px;
+    margin-right: 20px;
+    color: rgb(0, 182, 0);
+    vertical-align: middle;
+
+}
+
+.addproduct:hover{
+
+    cursor: pointer;
+    color: rgb(0, 129, 0);
+
+}
+
+
+.tabela-produtos{
+
+    width: 100%;
+    margin-top: 40px;
+
+}
+
+.tabela-produtos tr{
+
+    height: 150px;
+    border-bottom: 1px solid gray;
+
+}
+
+.tabela-produtos td p{
+    max-height: 150px;
+}
+
+.propriedades{
+    height: 80px;
+}
+
+
+.tabela-produtos td{
+
+    text-align: center;
+    padding: 10px;
+
+}
+
+.textarea-descricao{
+
+    overflow: hidden;
+    border: none;
+
+}
+
+.foto{
+
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+
+
+}
+
+.editar-produto-td{
+
+    vertical-align: top;
+
+}
+
+.nenhum-produto{
+
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgb(201, 201, 201);
+    margin-top: 50px;
+    padding-top: 30px;
+
+}
+.botoes-paginas{
+    padding: 30px;
+}
+
+.botoes-paginas a:hover{
+
+    cursor: pointer;
+
+}
+
+.botoes-paginas input{
+
+    width: 70px;
+    text-align: center;
+
+}
+
+
+@media screen and (max-width: 1000px){
+
+    .div-botoes{
+        position: absolute;
+        right: 0;
+        bottom: -30;
+    }
+
+}
+
+/* Página cadastrar produto */
+
+.cadastrar-editar-produtos{
+
+    display: none;
+
+}
+
+.conteudo{
+
+    margin: 100px auto;
+    width: 90%;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-group textarea{
+    height: 38px;
+    min-height: 38px;
+}
+
+.inputErro, .inputErro:focus, .inputErro::placeholder{
+
+    border: 1px solid red;
+    color: red;
+    box-shadow: none;
+    outline: none;
+
+}
+
+
+.flex{
+
+    display:flex;
+
+}
+
+#add-category{
+
+    width:40px;
+    margin-left:20px;
+
+}
+
