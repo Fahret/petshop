@@ -9,18 +9,10 @@ $(document).ready(function () {
     //Página listar produtos 
 
     function puxarProduto() {
-        produtos = []
 
-        for (var key in localStorage) {
-
-            if (localStorage.hasOwnProperty(key)) {
-                var produto = JSON.parse(key)
-                produtos.push(produto);
-
-            }
-        }
-
+        produtos = JSON.parse(localStorage["produtos"])
         produtosFiltrados = produtos
+
     }
 
     function mostrarPagina() {
@@ -205,9 +197,21 @@ $(document).ready(function () {
     //Página cadastrar produto
 
     $(".cadastrar").click(function () {
+               
+        if(localStorage.hasOwnProperty("maxProdutoID")){
+
+            var maxProdutoID = parseInt(localStorage["maxProdutoID"]) + 1
+            localStorage.setItem("maxProdutoID", maxProdutoID)
+
+        }
+        else{
+            var maxProdutoID = 0
+            localStorage.setItem("maxProdutoID", maxProdutoID)
+        }
 
         var linkImagem = $("#foto").val().replace("C:\\fakepath\\", "img/")
         var produto = {
+            produtoID: maxProdutoID,
             nome: $("#nome").val(),
             marca: $("#marca").val(),
             fornecedor: $("#fornecedor").val(),
@@ -220,10 +224,12 @@ $(document).ready(function () {
             precovenda: $("#precovenda").val()
 
         };
-        
-        var produtoJson = JSON.stringify(produto);
-        localStorage.setItem(produtoJson, "produto");
 
+        var listaProdutos = JSON.parse(localStorage["produtos"])
+        listaProdutos.push(produto)
+        var listaProdutosJSON = JSON.stringify(listaProdutos)
+        localStorage.setItem("produtos", listaProdutosJSON);
+        
     });
 
     $(".editar").click(function () {

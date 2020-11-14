@@ -1,4 +1,4 @@
-var arrayProdutos = []
+var produtos = []
 
 $(document).ready(function(){
 
@@ -8,7 +8,7 @@ $(document).ready(function(){
     $(".card-produto").click(function(){
 
         var id = $(this).index()
-        var produto = JSON.stringify(arrayProdutos[id])
+        var produto = JSON.stringify(produtos[id])
         sessionStorage.setItem("visualizarproduto", produto)
         window.location.href = "produto.html"
 
@@ -17,30 +17,25 @@ $(document).ready(function(){
 });
 
 function puxaProdutos() {
-    for(var key in localStorage) {
-        if(localStorage.hasOwnProperty(key) && localStorage[key] == "produto") {
-            var produto = JSON.parse(key)
-            arrayProdutos.push(produto)
-        }
-    }
+    produtos = JSON.parse(localStorage["produtos"])
 }
 
 function montarCard() {
-    for(i = 0; i < arrayProdutos.length; i++) {
+    for(i = 0; i < produtos.length; i++) {
 
-        var produto = arrayProdutos[i]
+        var produto = produtos[i]
         var conteudo = ""
         
         conteudo += '<div class="card-produto">'
         conteudo +=     '<div class="card-produto-foto">'
-        conteudo +=         '<img src="' + produto["foto"] + '" alt="racao-gato">'
+        conteudo +=         '<img src="' + produto["foto"] + '">'
         conteudo +=     '</div>'
         conteudo +=     '<div class="card-produto-nome">'
         conteudo +=         '<h3>' + produto["nome"] + '</h3>'
         conteudo +=     '</div>'
         conteudo +=     '<div class="card-produto-nota">'
         conteudo +=         '<p>' + produto["marca"] + '</p>'
-        conteudo +=         '<img src="img/five-stars.png" alt="stars">'
+        conteudo +=         '<img src="img/five-stars.png">'
         conteudo +=     '</div>'
         conteudo +=     '<div class="card-produto-preco">'
         conteudo +=         '<h3>' + produto["precovenda"] + '</h3>'
