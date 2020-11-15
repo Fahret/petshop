@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+header{
+
+    width: 100%;
+    height: 80px;
+    background-color: blueviolet;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+}
+
+header .logo{
+
+    margin: 40px 80px 0px 40px;
+    width: 100px;
+    height: 40px;
+    transform: translateY(-50%);
+    flex: none;
+
+}
+
+header .logo img{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+header .barra-pesquisa{
+
+    position: relative;
+    width: 540px;
+    height: 40px;
+
+}
+
+header .barra-pesquisa *{
+    display: inline-block;
+
+}
+
+header .barra-pesquisa input{
+
+    width: 500px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    padding-left: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    outline: none;
+}
+
+header .barra-pesquisa button{
+
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    outline: none;
+
+}
+
+header .barra-pesquisa button:hover{
+
+    background-color: #f1f1f1;
+
+}
+
+header .barra-pesquisa button i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #767676;
+}
+
+header .icones{
+
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    
+
+}
+
+header .icones .borda-icone{
+
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+
+
+}
+
+header .icones .borda-icone:hover{
+
+    border: 2px solid #f24783;
+
+}
+
+
+header .icones .borda-icone i{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    padding-right: 2px;
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+
+    header .logo{
+        margin-right: 40px;
+    }
+
+    header .barra-pesquisa{
+        
+        margin-right: 10px;
+
+    }
+
+
+    header .icones{
+
+        display: none;
+        
+    
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    header .barra-pesquisa input{
+        width: 90%; 
+    }
+    header .barra-pesquisa button{
+            width: 10%; 
+    }
+}
+
+:root {
+    overflow-y: auto;
+}
+
+body{
+
+    background-color:#ffffff;
+    overflow-y: auto;
+
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+.botao-rosa{
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    background-color: #f24783;
+    color: white;
+    outline: none;
+    cursor: pointer;
+
+}
+.botao-rosa:hover{
+    background-color: #ee6b99;
+}
+
+footer {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 200px 0px 150px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+footer p {
+    font-size: 16px;
+}
+
+footer h4{
+    font-size: 18px;
+    color: blueviolet;
+}
+
+.footer-content{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 75%;
+    display: flex;
+}
+
+.footer-content img{
+    width: 100px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.footer-content div {
+    width: 25%;
+    height: 300px;
+}
+
+.footer-logo div{
+    width: 100%;
+    height: 25%;
+}
+
+.footer-contato div{
+    margin-top: 5px;
+}
+
+.footer-contato div *{
+    display: inline-block;
+}
+
+.footer-contato div i {
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.footer-inscrever input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.bSinscreve{
+
+    margin-top: 10px;
+    border: none;
+    width: 100px;
+    padding: 4px;
+    background-color: #f24783;
+    color: white;
+    outline: none;
+
+}
+.bSinscreve:hover{
+    background-color: #ee6b99;
+}
+
+.footer-footer-content {
+    width: 100%;
+    height: 25%;
+    padding: 0px 50px 0px 50px;
+}
+
+.footer-footer {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.footer-footer i{
+    color: blueviolet;
+}

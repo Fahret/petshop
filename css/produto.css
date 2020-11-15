@@ -15,7 +15,6 @@
 
 }
 
-
 .info-geral {
     width: 100%;
     padding-top: 40px;
@@ -57,12 +56,18 @@
 
 }
 
+.descricao-produto{
+
+    line-height: .9;
+}
+
 .card-similar p{
 
     width: 100%;
     padding-left: 20px;
 
 }
+
 
 .info-lateral {
     width: 25%;
@@ -89,7 +94,7 @@
 }
 
 .div-img {
-    width: 300px;
+    width: 30%;
 }
 
 .info-geral img{
@@ -97,7 +102,7 @@
 }
 
 .div-info {
-    width: 300px;
+    width: 70%;
 }
 
 .div-info *:not(li){

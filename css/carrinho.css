@@ -1,0 +1,199 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+
+    background-color: rgb(243, 243, 243);
+
+}
+
+.carrinho-content{
+
+    width: 90%;
+    margin: 70px auto;
+    display: flex;
+
+}
+
+
+.div-esquerda{
+    width: 70%;
+    height: 100%;
+    margin-right: 50px;
+
+}
+
+.div-esquerda > p{
+
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+
+.div-produto-carrinho{
+
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 2px 6px rgb(202, 202, 202);
+    background-color: white;
+    cursor: pointer;
+}
+
+.div-produto-carrinho > div{
+
+    padding: 20px;
+    min-width: 100px;
+
+}
+
+.imagem-produto-carrinho{
+
+    position: relative;
+    width: 10%;
+
+}
+
+.imagem-produto-carrinho img{
+
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.informacoes-produto-carrinho{
+
+    width: 70%;
+
+}
+
+.icones-final-produto{
+
+    width: 20%;
+    position: relative;
+
+}
+
+.alterar-quantidade{
+
+    height: 28px;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+}
+
+.remover-produto-carrinho{
+
+
+    position: absolute;
+    top: 20px;
+    right: 10px;
+
+}
+
+.alterar-quantidade .botao{
+
+    width: 20px;
+    height: 100%;
+    border: 1px solid rgb(214, 214, 214);
+    position: relative;
+    padding: 10px;
+}
+
+.alterar-quantidade .botao i{
+
+    font-size: 11px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(153, 153, 153);
+
+}
+
+.botao-menos{
+
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+}
+
+.alterar-quantidade input{
+
+    width: 35px;
+    border: 1px solid rgb(214, 214, 214);
+    text-align: center;
+    padding-top: 3px;
+}
+
+.botao-mais{
+
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+
+}
+
+.informacoes-carrinho{
+
+    width: 30%;
+
+}
+
+.secao{
+    background-color: white;
+    box-shadow: 0 0 6px rgb(233, 233, 233);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+
+.calcular-frete input{
+
+    width: 100%;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.linha{
+
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.valor{
+
+    position: absolute;
+    right: 0;
+    
+
+}
+
+.pedido-total{
+
+    border-bottom: 1px solid rgb(201, 201, 201);
+    margin-bottom: 10px;
+
+}
+
+.comprar{
+
+    width: 100%;
+    margin: 10px 0 10px 0;
+
+}

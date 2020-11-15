@@ -156,18 +156,33 @@ $(document).ready(function (){
 
     $(".salvar").click(function (){
 
+        if(localStorage.hasOwnProperty("maxUserID")){
+
+            var maxUserID = parseInt(localStorage["maxUserID"]) + 1
+            localStorage.setItem("maxUserID", maxUserID)
+
+        }
+        else{
+            var maxUserID = 0
+            localStorage.setItem("maxUserID", maxUserID)
+        }
+
         var usuario = {
 
+            userID: maxUserID,
             nome: $(".input-nome").val().toLowerCase(),
             sobrenome: $(".input-sobrenome").val().toLowerCase(),
             email: $(".input-email").val().toLowerCase(),
             cpf: $(".input-cpf").val(),
-            senha: $(".senha-cadastro").val()
+            senha: $(".senha-cadastro").val(),
+            produtosAdicionados: []
 
         }
-
-        var usuarioJSON = JSON.stringify(usuario)
-        localStorage.setItem(usuarioJSON, "usuario")
+        
+        var listaUsuarios = JSON.parse(localStorage["usuarios"])
+        listaUsuarios.push(usuario)
+        var listaUsuariosJSON = JSON.stringify(listaUsuarios)
+        localStorage.setItem("usuarios", listaUsuariosJSON);
 
     })
     
@@ -175,19 +190,20 @@ $(document).ready(function (){
     
     $(".logar").click(function (){
 
-        for(var key in localStorage){
+        var usuarios = JSON.parse(localStorage["usuarios"])
 
-            if (localStorage.hasOwnProperty(key)){
+        for(var i = 0; i < usuarios.length; i++){
 
-                var usuario = JSON.parse(key)
-                if($(".usuario-login").val() == usuario["email"] && $(".senha-login").val() == usuario["senha"]){
+            var usuario = usuarios[i]
+            if($(".usuario-login").val() == usuario["email"] && $(".senha-login").val() == usuario["senha"]){
 
-                    sessionStorage.setItem(key, "usuario")
-                    return
-
-                }
-
+                var usuarioJSON = JSON.stringify(usuario)
+                sessionStorage.setItem("usuario-logado", usuarioJSON)
+                window.location.href = "index.html"
+                return
+    
             }
+
 
         }
 

@@ -1,0 +1,166 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <link rel="stylesheet" href="css/cadastroprodutos.css">
+    <script src="js/cadastroprodutos.js"></script>
+    <title>Cadastro de produtos</title>
+</head>
+
+<body>
+
+    <div class="div-produtos">
+
+        <label class="checkmenu" for="menuativo"><i class="fas fa-filter menu-filtro"></i></label>
+        <input type="checkbox" id="menuativo" >
+
+        <aside class="filtros">
+            <div class="filtros-div">
+                <div class="novo-filtro">
+
+                    <div class="inputs-filtro">
+                        <select class="opcoes">
+                            <option value="nome">Nome</option>
+                            <option value="marca">Marca</option>
+                            <option value="precocompra">Preço de compra</option>
+                            <option value="precovenda">Preço de venda</option>
+                            <option value="estoquemin">Estoque mínimo</option>
+                            <option value="estoquemax">Estoque máximo</option>
+                            <option value="estoqueatual">Estoque atual</option>
+                            <option value="fornecedor">Fornecedor</option>
+                            <option value="descricao">Descrição</option>
+                            <option value="codigo">Código</option>
+                        </select>
+                        <textarea class="filtro-valor" placeholder="" ></textarea>
+                    </div>
+
+                    <i class="far fa-trash-alt botao-deletar-filtro"></i>
+
+                </div>
+
+                <div class="botao-novo-filtro">
+                    <p>Adicionar novo Filtro</p>
+                </div>
+
+            </div>
+
+            <div class="filtros-botoes">
+                <button class="confirmar-filtros btn btn-success">Confirmar</button>
+                <button class="deletar-filtros btn btn-danger">Deletar Todos</button>
+            </div>
+
+        </aside>
+
+        <div class="operacoes">
+            <div class="div-ordenacao div-nprodutos">
+                <p>Nº Produtos</p>
+                <input class="n-produtos" type="number" value="5">
+            </div>
+
+
+            <div class="div-botoes">
+                <i class="fas fa-plus-circle addproduct"></i>
+                <button class="btn btn-danger deletartudo">Deletar todos</button>
+            </div>
+
+        </div>
+
+        <table class="tabela-produtos">
+
+            <thead>
+                <tr class="propriedades">
+                    <td></td>
+                    <td>Nome</td>
+                    <td>Marca</td>
+                    <td>Preço de compra</td>
+                    <td>Preço de Venda</td>
+                    <td>Estoque mínimo</td>
+                    <td>Estoque máximo</td>
+                    <td>Estoque atual</td>
+                    <td>Fornecedor</td>
+                    <td>Descrição</td>
+                    <td>Código</td>
+                </tr>
+            </thead>
+
+            <tbody class="produtos">
+                
+            </tbody>
+
+        </table>
+
+        <div class="nenhum-produto"><p>Nenhum produto foi encontrado</p></div>
+
+        <div class="botoes-paginas">
+            <p>Digite qual página você quer acessar</p>
+            <input type="text" value="1">
+
+        </div>
+
+    </div>
+
+    <div class="cadastrar-editar-produtos">
+
+        <form class="conteudo" method="POST">
+
+            <div class="row">
+
+                <div class="form-group col-sm-6" >
+                    <input type="text" name="nome" class="form-control input" placeholder="Nome" id="nome">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <input type="text" name="nome" class="form-control input" placeholder="Marca" id="marca">
+                </div>
+    
+
+                <div class="form-group col-sm-6 col-xs-4">
+                    <textarea class="form-control input" rows="1" placeholder="Descrição" id="descricao" ></textarea>
+                </div>
+
+                <div class="form-group col-sm-6 col-xs-4">
+                    <input type="text" name="provider" placeholder="Fornecedor" class="form-control input" id="fornecedor">
+                </div>
+
+                <div class="form-group col-sm-6 ">
+                    <input type="text" name="code" placeholder="Código" class="form-control input numeric" id="codigo">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <input type="file" name="fotoProduto" class="form-control input" id="foto">
+                </div>
+
+                <div class="form-group col-sm-4 col-xs-4">
+                    <input type="text" name="minimumStock" placeholder="Estoque mínimo" class="form-control input numeric" id="estoquemin">
+                </div>
+
+                <div class="form-group col-sm-6 col-xs-6">
+                    <input type="text" name="maximumStock" placeholder="Estoque máximo" class="form-control input numeric" id="estoquemax">
+                </div>
+
+                <div class="form-group  col-sm-4 col-xs-4">
+                    <input type="text" name="purchasePrice" placeholder="Preço de compra" class="form-control input numeric float" id="precocompra">
+                </div>
+                <div class="form-group  col-sm-4 col-xs-4">
+                    <input type="text" name="salePrice" placeholder="Preço de venda" class="form-control input numeric float" id="precovenda">
+                </div>
+    
+            </div>
+
+            <div class="botoes">
+                <button class="botao cadastrar btn btn-success">Cadastrar produto</button>
+                <button class="botao editar btn btn-success">Editar produto</button>
+                <button type="button" class="cancelar btn btn-danger">Cancelar</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
