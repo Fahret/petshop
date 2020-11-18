@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/compras.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Ubuntu:ital,wght@1,300&display=swap">
+    <title>Compra</title>
+</head>
+
+<body>
+
+    <div class="secoes">
+
+        <div class="secao forma-pagamento">
+
+            <div class="secao-content">
+                <p>1. Forma de pagamento</p>
+
+                <div class="boleto">
+                    <p>Boleto bancário</p>
+                </div>
+
+                <div class="cartao">
+                    <div class="imagem">
+                        <img src="">
+                    </div>
+                    <p>Cartão de crédito</p>
+                    <p style="color: green;">Em até 12x sem juros</p>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="secao dados-pessoais">
+
+            <div class="secao-content">
+                <p>2. Pagamento</p>
+
+                <div>
+                    <label>Número do cartão</label>
+                    <input type="text">
+                    <div class="bandeiras">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-diners-club"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-stripe"></i>
+                    </div>
+
+                </div>
+
+                <div>
+                    <label>Nome no cartão</label>
+                    <input type="text">
+                </div>
+
+                <div>
+                    <label>Validade</label>
+                    <div class="validade-opcoes">
+                        <select>
+                            <option>Mês</option>
+                        </select>
+                        <select>
+                            <option>Ano</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Código de segurança</label>
+                    <input type="text">
+                </div>
+
+                <div class="parcelar">
+                    <label>Parcelar em</label>
+                    <input class="input-parcelar" type="text">
+                    <label>vezes</label>
+                </div>
+
+                <div>
+                    <button class="comprar">Comprar com cartão</button>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="secao revisao-pedido">
+            <div class="secao-content">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
