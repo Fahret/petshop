@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="js/padroes.js"></script>
     <script src="js/index.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN57mkO88IXlQikM9Gp6zA2txiHgxMtJY&callback=initMap" async defer ></script>
 
@@ -24,27 +25,22 @@
         <a class="logo" href="index.html"><img src="img/petticologo.png"></a>
 
         <div class="barra-pesquisa">
-            <input type="text" placeholder="Ex: Ração, Remédios, etc.">
+            <input type="text" placeholder="Ex: Ração">
             <button type="submit"><i class="fas fa-search"></i></button>
         </div>
 
         <div class="icones">
 
-            <a class="borda-icone" href="carrinho.html">
+            <a class="borda-icone" id="carrinho-icone" href="carrinho.html">
                 <i class="fas fa-shopping-cart"></i>
             </a>
 
-            <a class="borda-icone">
-                <i class="fas fa-comment-alt" style="padding-right: 0px;"></i>
-            </a>
-            
-            <a class="borda-icone" href="logincadastro.html">
+            <a class="borda-icone" id="deslogar-logar">
                 <i class="fas fa-sign-in-alt"></i>
             </a>
         </div>
 
     </header>
-
 
     <div class="mensagem">
         <div class="mensagem-content">

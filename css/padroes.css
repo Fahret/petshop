@@ -100,6 +100,10 @@ header .icones{
 
 }
 
+#carrinho-icone{
+    display: none;
+}
+
 header .icones .borda-icone{
 
     border: 2px solid white;

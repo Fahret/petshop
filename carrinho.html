@@ -11,6 +11,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <script src="js/padroes.js"></script>
     <script src="js/carrinho.js"></script>
 
     <title>Carrinho</title>
@@ -28,15 +29,11 @@
 
         <div class="icones">
 
-            <a class="borda-icone" href="carrinho.html">
+            <a class="borda-icone" id="carrinho-icone" href="carrinho.html">
                 <i class="fas fa-shopping-cart"></i>
             </a>
 
-            <a class="borda-icone">
-                <i class="fas fa-comment-alt" style="padding-right: 0px;"></i>
-            </a>
-            
-            <a class="borda-icone" href="logincadastro.html">
+            <a class="borda-icone" id="deslogar-logar">
                 <i class="fas fa-sign-in-alt"></i>
             </a>
         </div>
@@ -47,7 +44,8 @@
     <div class="carrinho-content">
 
         <div class="div-esquerda">
-            <p>Meus produtos</p>
+            <p class="meus-produtos">Meus produtos</p>
+            <p class="mensagem-vazio">Seu carrinho está vazio :(</p>
             <div class="lista-produtos-carrinho">
                 
             </div>
@@ -66,7 +64,7 @@
                     <div class="linha resumo-pedido"><strong>Resumo do pedido</strong></div>
                     <div class="linha numero-produtos">
                         <div class="texto">Produtos</div>
-                        <div class="valor valor-produtos">R$20,00</div>
+                        <div class="valor valor-produtos">R$0,00</div>
                     </div>
                     <div class="linha frete">
                         <div class="texto">Frete</div>
@@ -74,14 +72,14 @@
                     </div>
                     <div class="linha desconto">
                         <div class="texto">Desconto</div>
-                        <div class="valor valor-desconto">-R$1,50</div>
+                        <div class="valor valor-desconto">-R$0,00</div>
                     </div>
 
                 </div>
 
                 <div class="linha subtotal-texto">
                     <div class="texto">Subtotal</div>
-                    <div class="valor valor-subtotal">R$18,50</div>
+                    <div class="valor valor-subtotal">R$0,00</div>
                 </div>
 
                 <button class="botao-rosa comprar">Comprar</button>

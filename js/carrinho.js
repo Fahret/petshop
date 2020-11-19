@@ -75,9 +75,24 @@ function removerProdutoCarrinho(botaoDeletar){
 
 function puxarInformacoes(){
 
+
+    if(relacaoCardID.length == 0){
+        $(".valor").text("R$ 0,00")
+        $(".valor-frete").text("A calcular")
+        $(".comprar").css("display", "none")
+        $(".meus-produtos").css("display", "none")
+        $(".mensagem-vazio").css("display", "block")
+        return
+    }
+    else{
+        $(".comprar").css("display", "block")
+        $(".mensagem-vazio").css("display", "none")
+        $(".meus-produtos").css("display", "block")
+    }
+
     var listaProdutos = JSON.parse(localStorage["produtos"])
     var somaTotal = 0;
-    var desconto = 1.5;
+    var desconto = 1;
     var frete = -1;
     var freteACaucular = true
 
@@ -85,7 +100,15 @@ function puxarInformacoes(){
 
         var indexProduto = relacaoCardID[i][1]
         var precoVenda = parseFloat(listaProdutos[indexProduto]["precovenda"])
-        var quantidade = parseFloat($(".quantidade").eq(i).val())
+        if($(".quantidade").val() == ""){
+            
+            var quantidade = 1;
+    
+        }
+        else{
+            var quantidade = parseFloat($(".quantidade").eq(i).val())
+        }
+
         somaTotal += quantidade * precoVenda
 
     }
@@ -117,11 +140,14 @@ function tratarReal(valor){
 }
 
 $(document).ready(function(){
-
+  
     carregarCarrinho()
     puxarInformacoes()
 
     $(".cep").mask("00000-000")
+    $(".quantidade").mask("000")
+
+
     $("body").on("click", ".remover-produto-carrinho", function(){
         removerProdutoCarrinho(this)
         puxarInformacoes()
@@ -131,6 +157,36 @@ $(document).ready(function(){
     $(".comprar").click(function(){
 
         window.location.href = "compras.html"
+
+    })
+    
+    $(".botao-mais").click(function(){
+
+        var valor = parseInt($(".quantidade").val())
+        $(".quantidade").val(valor + 1)
+        
+        if(parseInt($(".quantidade").val()) > 999){
+
+            $(".quantidade").val("999")
+
+        }
+
+        puxarInformacoes()
+
+    })
+
+       
+    $(".botao-menos").click(function(){
+
+        var valor = parseInt($(".quantidade").val())
+        $(".quantidade").val(valor - 1)
+
+        if(parseInt($(".quantidade").val()) < 1){
+
+            $(".quantidade").val("1")
+
+        }
+        puxarInformacoes()
 
     })
 

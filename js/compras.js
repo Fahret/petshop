@@ -1,7 +1,44 @@
 $(document).ready(function(){
 
+    $("input").val("")
+
     puxarInformacoes()
     carregarCarrinho()
+
+    //Mascaras
+
+    $("#numCartao").mask("0000 0000 0000 0000")
+    $("#ano").mask("0000")
+    $(".input-parcelar").mask("00")
+
+    
+    //-----------------------------
+
+
+    $(".cartao").click(function(){
+
+        $(".boleto").css("background-color", "rgb(206, 206, 206, 0)")
+        $(this).css("background-color", "rgb(206, 206, 206)")
+        $(".boleto-bancario").css("display", "none")
+        $(".cartao-credito").css("display", "block")
+    
+    })
+
+    $(".boleto").click(function(){
+
+        $(".cartao").css("background-color", "rgb(206, 206, 206, 0)")
+        $(this).css("background-color", "rgb(206, 206, 206)")
+        $(".cartao-credito").css("display", "none")
+        $(".boleto-bancario").css("display", "block")
+    
+    })
+
+    $(".fab").click(function(){
+
+        $(".fab").css("color", "rgb(163, 163, 163)")
+        $(this).css("color", "rgb(162, 0, 255)")
+
+    })
 
 })
 
@@ -22,7 +59,7 @@ function carregarCarrinho(){
         if(produtosCarrinho.includes(listaProdutos[i]["produtoID"])){
 
             var conteudo = ""
-            conteudo += ' <div class="card boleto">'
+            conteudo += ' <div class="card card-produto">'
             conteudo +=     '<div class="imagem">'
             conteudo +=         '<img src="' + listaProdutos[i]["foto"] + '">'
             conteudo +=      '</div>'

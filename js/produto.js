@@ -42,10 +42,8 @@ function colocarCarrinho(){
 
         }
 
+
     }
-
-
-
 
 }
 
@@ -54,8 +52,14 @@ $(document).ready(function(){
     montarProduto()
 
     $(".colocar-carrinho").click(function(){
-        colocarCarrinho()
-        window.location.href = "carrinho.html"
+        if(sessionStorage.hasOwnProperty("usuario-logado")){
+            colocarCarrinho()
+            window.location.href = "carrinho.html"
+        }
+        else{
+            window.location.href = "loginCadastro.html"
+        }
+
     })
 
 })
