@@ -1,6 +1,10 @@
 /* STYLES DOS PRODUTOS NOVOS E FILTRO*/
 
 
+.produtos-centro {
+    margin: 0px 10% 0px 10%;
+    
+}
 
 .produtos-centro .card-produto {
     float: left;
