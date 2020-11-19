@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $(".produto-botao").click(function(){
+    $(".botao-todos-produtos").click(function(){
 
         window.location.href = "produtos.html"
 
