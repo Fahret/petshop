@@ -20,7 +20,7 @@ header{
 header .logo{
 
     margin: 40px 80px 0px 40px;
-    width: 100px;
+    width: 85px;
     height: 40px;
     transform: translateY(-50%);
     flex: none;
@@ -242,6 +242,10 @@ footer h4{
     height: 25%;
 }
 
+.footer-contato{
+    margin-top: 20px;
+}
+
 .footer-contato div{
     margin-top: 5px;
 }
@@ -260,10 +264,11 @@ footer h4{
     height: 30px;
     border: 1px solid lightgray;
     border-radius: 5px 5px 5px 5px;
+    outline: none;
+    padding-left: 10px;
 }
 
 .bSinscreve{
-
     margin-top: 10px;
     border: none;
     width: 100px;
