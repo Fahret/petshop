@@ -128,4 +128,10 @@ $(document).ready(function(){
     })
     $(".quantidade").on("input", puxarInformacoes)
 
+    $(".comprar").click(function(){
+
+        window.location.href = "compras.html"
+
+    })
+
 })

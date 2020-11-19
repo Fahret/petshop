@@ -1,23 +1,6 @@
 /* STYLES DOS PRODUTOS NOVOS E FILTRO*/
 
-.centralizador {
-    width: 100%;
-    height: 100%;
-}
 
-.centralizador{
-    display: flex;
-}
-
-.filtro{
-    width: 15vw;
-    height: 100vh;
-    border-right: 1px solid lightgray;
-}
-
-.produtos{
-    width: 85vw;
-}
 
 .produtos-centro .card-produto {
     float: left;
@@ -25,7 +8,6 @@
 
 .card-produto{
     width: 250px;
-    height: 500px;
     margin: 40px;
     border: 1px solid lightgray;
 }
@@ -59,7 +41,6 @@
     width: 100%;
     height: 100px;
     background-color: blueviolet;
-    font-size: 18px;
     color: white;
 }
 
@@ -68,6 +49,8 @@
     height: 50px;
     display: flex;
     align-items: center;
+    position: relative;
+
 }
 
 .card-produto-nota p{
@@ -76,10 +59,11 @@
 
 .card-produto-nota img{
     width: 100px;
+    position: absolute;
+    right: 0;
 }
 
 .card-produto-preco{
     width: 100%;
-    height: 100px;
     font-size: 25px;
 }

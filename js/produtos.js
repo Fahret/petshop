@@ -20,6 +20,12 @@ function puxaProdutos() {
     produtos = JSON.parse(localStorage["produtos"])
 }
 
+function tratarReal(valor){
+
+    return "R$ " + valor.toString().replace(".", ",")
+
+}
+
 function montarCard() {
     for(i = 0; i < produtos.length; i++) {
 
@@ -38,7 +44,7 @@ function montarCard() {
         conteudo +=         '<img src="img/five-stars.png">'
         conteudo +=     '</div>'
         conteudo +=     '<div class="card-produto-preco">'
-        conteudo +=         '<h3>' + produto["precovenda"] + '</h3>'
+        conteudo +=         '<h3>' + tratarReal(produto["precovenda"]) + '</h3>'
         conteudo +=     '</div>'
         conteudo += '</div>'
 

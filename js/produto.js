@@ -1,12 +1,19 @@
 var produto;
 
+
+function tratarReal(valor){
+
+    return "R$ " + valor.toString().replace(".", ",")
+
+}
+
 function montarProduto(){
 
     produto = JSON.parse(sessionStorage["visualizarproduto"])
     $(".div-img img").prop("src", produto["foto"])
     $(".produto-nome").text(produto["nome"])
     $(".descricao-produto").html(produto["descricao"])
-    $(".preco-produto").text("R$ " + produto["precovenda"])
+    $(".preco-produto").text(tratarReal(produto["precovenda"]))
     $(".codigo-produto").text("Cod: " + produto["codigo"])
 
 }
