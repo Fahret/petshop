@@ -55,20 +55,52 @@
 .card{
 
     width: 100%;
-    border: 1px solid rgb(172, 172, 172);
+    border: 1px solid rgb(202, 202, 202);
     padding: 10px;
     display: flex;
+    margin-bottom: 10px;
 
 }
 
-.secao-content > div:not(.parcelar){
+.card:hover{
+
+    background-color: rgb(206, 206, 206);
+    cursor: pointer;
+
+}
+
+.card .imagem{
+
+    width: 20%;
+    position: relative;
+    margin-right: 20px;
+
+}
+
+.card .imagem img{
+
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.card .informacoes{
+
+    width: 80%;
+
+}
+
+.dados-pessoais .secao-content > div:not(.parcelar){
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.secao-content > div input:not(.input-parcelar){
+.dados-pessoais .secao-content > div input:not(.input-parcelar){
 
     border: none;
     border-radius: 2px;
@@ -148,5 +180,45 @@
     background-color: rgb(82, 177, 82);
     color: white;
     font-size: 16px;
+
+}
+
+.produtos-selecionados{
+
+    width: 100%;
+    height: 300px;
+    border: 1px solid rgb(151, 151, 151);
+    overflow-y: scroll;
+
+}
+
+
+.secao-produto{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.linha{
+
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.valor{
+
+    position: absolute;
+    right: 0;
+    
+
+}
+
+.pedido-total{
+
+    border-bottom: 1px solid rgb(201, 201, 201);
+    margin-bottom: 10px;
 
 }
