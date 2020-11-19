@@ -2,8 +2,8 @@ $(document).ready(function(){
 
     $("input").val("")
 
-    puxarInformacoes()
     carregarCarrinho()
+    puxarInformacoes()
 
     //Mascaras
 
@@ -43,7 +43,7 @@ $(document).ready(function(){
 })
 
 var relacaoCardID = [];
-
+var produtoQuantidade = JSON.parse(sessionStorage["produtosQuantidade"])
 function carregarCarrinho(){
 
     var usuario = JSON.parse(sessionStorage["usuario-logado"])
@@ -58,13 +58,21 @@ function carregarCarrinho(){
 
         if(produtosCarrinho.includes(listaProdutos[i]["produtoID"])){
 
+            for(var x = 0; x < produtoQuantidade.length; x++){
+                if(produtoQuantidade[x][0] == listaProdutos[i]["produtoID"]){
+                    var quantidade = produtoQuantidade[x][1]
+                }
+            }
+
             var conteudo = ""
             conteudo += ' <div class="card card-produto">'
             conteudo +=     '<div class="imagem">'
             conteudo +=         '<img src="' + listaProdutos[i]["foto"] + '">'
             conteudo +=      '</div>'
             conteudo +=      '<div class="informacoes">'
-            conteudo +=          '<p>' + listaProdutos[i]["nome"] + '</p>'
+            conteudo +=          '<p>' + listaProdutos[i]["nome"] + '</p><br>'
+            conteudo +=          '<p>Preço: ' + listaProdutos[i]["precovenda"] + '</p>'
+            conteudo +=          '<p>Quantidade: ' + quantidade + '</p>'
             conteudo +=       '</div>'
             conteudo += '</div>'
 
@@ -84,35 +92,31 @@ function puxarInformacoes(){
 
     var listaProdutos = JSON.parse(localStorage["produtos"])
     var somaTotal = 0;
-    var desconto = 1.5;
-    var frete = -1;
-    var freteACaucular = true
+    var desconto = 1;
+    var frete = 2;
 
     for(var i = 0; i < relacaoCardID.length; i++){
 
+        for(var x = 0; x < produtoQuantidade.length; x++){
+            if(produtoQuantidade[x][0] == listaProdutos[i]["produtoID"]){
+                var quantidade = produtoQuantidade[x][1]
+            }
+        }
+
         var indexProduto = relacaoCardID[i][1]
         var precoVenda = parseFloat(listaProdutos[indexProduto]["precovenda"])
-        var quantidade = parseFloat($(".quantidade").eq(i).val())
         somaTotal += quantidade * precoVenda
 
     }
 
     var subtotal = somaTotal + frete - desconto
-
     var precoTratado = tratarReal(somaTotal)
     var descontoTratado = tratarReal(desconto)
     var subtotalTratado = tratarReal(subtotal)
     var freteTratado = tratarReal(frete)
     $(".valor-produtos").text(precoTratado)
+    $(".valor-frete").text(freteTratado)
     $(".valor-desconto").text(descontoTratado)
-
-    if(freteACaucular){
-        $(".valor-frete").text("A calcular")
-    }
-    else{
-        $(".valor-frete").text(freteTratado)
-    }
-
     $(".valor-subtotal").text(subtotalTratado)
 
 }

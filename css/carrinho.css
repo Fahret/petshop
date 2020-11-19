@@ -157,17 +157,6 @@ body{
     border-radius: 4px;
 }
 
-
-.calcular-frete input{
-
-    width: 100%;
-    border: 1px solid rgb(223, 223, 223);
-    border-radius: 3px;
-    padding: 10px;
-    margin-top: 20px;
-
-}
-
 .linha{
 
     display: flex;

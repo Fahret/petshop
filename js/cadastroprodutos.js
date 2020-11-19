@@ -46,11 +46,10 @@ $(document).ready(function () {
                 conteudo +=         "<td><p>" + produto["precovenda"] + "</p></td>"
                 conteudo +=         "<td><p>" + produto["estoquemin"] + "</p></td>" 
                 conteudo +=         "<td><p>" + produto["estoquemax"] + "</p></td>" 
-                conteudo +=         "<td><p>" + produto["estoqueatual"] + "</p></td>" 
                 conteudo +=         "<td><p>" + produto["fornecedor"] + "</p></td>" 
                 conteudo +=         "<td><textarea class='textarea-descricao'cols='20'>" + produto["descricao"] + "</textarea></td>" 
                 conteudo +=         "<td><p>" + produto["codigo"] + "</p></td>"
-                conteudo +=         "<td class='editar-produto-td'><i class='fas fa-pencil-alt editar-produto'></i></td>"
+                
                 conteudo +=    "</tr>"
 
                 $(".produtos").append(conteudo)
@@ -234,6 +233,7 @@ $(document).ready(function () {
 
     $(".editar").click(function () {
 
+        var listaProdutos = JSON.parse(localStorage["produtos"])
         
 
 

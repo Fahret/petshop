@@ -78,7 +78,6 @@ function puxarInformacoes(){
 
     if(relacaoCardID.length == 0){
         $(".valor").text("R$ 0,00")
-        $(".valor-frete").text("A calcular")
         $(".comprar").css("display", "none")
         $(".meus-produtos").css("display", "none")
         $(".mensagem-vazio").css("display", "block")
@@ -93,8 +92,7 @@ function puxarInformacoes(){
     var listaProdutos = JSON.parse(localStorage["produtos"])
     var somaTotal = 0;
     var desconto = 1;
-    var frete = -1;
-    var freteACaucular = true
+    var frete = 2;
 
     for(var i = 0; i < relacaoCardID.length; i++){
 
@@ -116,18 +114,13 @@ function puxarInformacoes(){
     var subtotal = somaTotal + frete - desconto
 
     var precoTratado = tratarReal(somaTotal)
+    var freteTratado = tratarReal(frete)
     var descontoTratado = tratarReal(desconto)
     var subtotalTratado = tratarReal(subtotal)
-    var freteTratado = tratarReal(frete)
     $(".valor-produtos").text(precoTratado)
+    $(".valor-frete").text(freteTratado)
     $(".valor-desconto").text(descontoTratado)
 
-    if(freteACaucular){
-        $(".valor-frete").text("A calcular")
-    }
-    else{
-        $(".valor-frete").text(freteTratado)
-    }
 
     $(".valor-subtotal").text(subtotalTratado)
 
@@ -156,18 +149,41 @@ $(document).ready(function(){
 
     $(".comprar").click(function(){
 
+        var usuario = JSON.parse(sessionStorage["usuario-logado"])
+        var produtosAdicionados = usuario["produtosAdicionados"]
+        
+        var arrayProdutoQuantidade = []
+
+        for(var i = 0; i < produtosAdicionados.length; i++){
+            
+            for(var x = 0; x < relacaoCardID.length; x++){
+
+                if(relacaoCardID[x][1] == produtosAdicionados[i]){
+
+                    var idCard = relacaoCardID[x][0]
+                    var quantidade = $(".div-produto-carrinho").eq(idCard).find(".quantidade").val()
+                    arrayProdutoQuantidade.push([produtosAdicionados[i], quantidade])
+
+                }
+
+            }
+
+        }
+
+        sessionStorage.setItem("produtosQuantidade", JSON.stringify(arrayProdutoQuantidade))
+
         window.location.href = "compras.html"
 
     })
     
     $(".botao-mais").click(function(){
 
-        var valor = parseInt($(".quantidade").val())
-        $(".quantidade").val(valor + 1)
+        var valor = parseInt( $(this).siblings(".quantidade").val())
+        $(this).siblings(".quantidade").val(valor + 1)
         
         if(parseInt($(".quantidade").val()) > 999){
 
-            $(".quantidade").val("999")
+            $(this).siblings(".quantidade").val("999")
 
         }
 
@@ -179,11 +195,11 @@ $(document).ready(function(){
     $(".botao-menos").click(function(){
 
         var valor = parseInt($(".quantidade").val())
-        $(".quantidade").val(valor - 1)
+        $(this).siblings(".quantidade").val(valor - 1)
 
-        if(parseInt($(".quantidade").val()) < 1){
+        if(parseInt( $(this).siblings(".quantidade").val()) < 1){
 
-            $(".quantidade").val("1")
+            $(this).siblings(".quantidade").val("1")
 
         }
         puxarInformacoes()
