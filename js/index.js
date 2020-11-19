@@ -1,13 +1,20 @@
 $(document).ready(function(){
 
     $(".botao-todos-produtos").click(function(){
-
+      sessionStorage.setItem('produtosFiltro', JSON.stringify('nenhum-filtro'))
         window.location.href = "produtos.html"
 
     })
 
+    $(".produto-botao-img").click(function(){
+      var produtosfiltro = $(this).attr("id")
+      sessionStorage.setItem('produtosFiltro', JSON.stringify(produtosfiltro))
+      window.location.href = "produtos.html"
+    })
 
 })
+
+
 
 //Google maps API
 

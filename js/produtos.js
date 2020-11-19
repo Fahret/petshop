@@ -26,12 +26,21 @@ function tratarReal(valor){
 
 }
 
-function montarCard() {
-    for(i = 0; i < produtos.length; i++) {
 
+var filtro = null;
+
+function montarCard() {
+
+    var produtoFiltro2 = JSON.parse(sessionStorage["produtosFiltro"])
+    $("#filtro-ativo").text("filtro ativo: " + produtoFiltro2)
+
+    for(i = 0; i < produtos.length; i++) {
         var produto = produtos[i]
         var conteudo = ""
         
+        
+        if(produtoFiltro2 == produto["palavrachave"]) {
+
         conteudo += '<div class="card-produto">'
         conteudo +=     '<div class="card-produto-foto">'
         conteudo +=         '<img src="' + produto["foto"] + '">'
@@ -49,6 +58,7 @@ function montarCard() {
         conteudo += '</div>'
 
         $(".produtos-centro").append(conteudo)
+        }
     }
         
 }

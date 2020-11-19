@@ -220,8 +220,8 @@ $(document).ready(function () {
             estoquemin: $("#estoquemin").val(),
             estoquemax: $("#estoquemax").val(),
             precocompra: $("#precocompra").val(),
-            precovenda: $("#precovenda").val()
-
+            precovenda: $("#precovenda").val(),
+            palavrachave: $("#palavrachave").val()
         };
 
         var listaProdutos = JSON.parse(localStorage["produtos"])
